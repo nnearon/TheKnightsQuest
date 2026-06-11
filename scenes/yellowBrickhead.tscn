@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dms3qu170s71t"]
+
+[ext_resource type="Script" uid="uid://bed75oe2xebm2" path="res://scripts/slime.gd" id="1_4bgae"]
+[ext_resource type="Texture2D" uid="uid://c3ocivvktfo42" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_3/Attack_1/Attack_1_1/Attack_1_1_1.png" id="2_e8j08"]
+[ext_resource type="Texture2D" uid="uid://dvreru34xjgq2" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_3/Attack_1/Attack_1_1/Attack_1_1_2.png" id="3_mbyyx"]
+[ext_resource type="Texture2D" uid="uid://b22nxm7xccvii" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_3/Attack_1/Attack_1_1/Attack_1_1_3.png" id="4_f73vw"]
+[ext_resource type="Texture2D" uid="uid://2ojqrhav7hga" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_3/Attack_1/Attack_1_1/Attack_1_1_4.png" id="5_v14st"]
+[ext_resource type="PackedScene" uid="uid://bm38w1xok6i5s" path="res://scenes/killzone.tscn" id="14_lwgpv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5wyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e8j08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mbyyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f73vw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v14st")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
+size = Vector2(12, 12)
+
+[node name="yellowBrickhead" type="Node2D" unique_id=1035008956]
+script = ExtResource("1_4bgae")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=286531233]
+position = Vector2(0, 4)
+scale = Vector2(0.39583334, 0.39583334)
+sprite_frames = SubResource("SpriteFrames_v5wyi")
+autoplay = "default"
+frame_progress = 0.018665943
+flip_h = true
+
+[node name="killzone" parent="." unique_id=2058286764 instance=ExtResource("14_lwgpv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1400356569]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_0l8pv")
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=898858226]
+position = Vector2(0, 5)
+target_position = Vector2(12, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=449336089]
+position = Vector2(0, 5)
+target_position = Vector2(-12, 0)

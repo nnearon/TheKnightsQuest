@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dreslapwjpeg8"]
+
+[ext_resource type="Script" uid="uid://dit6xpwijiy6m" path="res://scripts/ExitGameButton.gd" id="1_a73cg"]
+[ext_resource type="Texture2D" uid="uid://dr2ldvbdtyy71" path="res://assets/sprites/ExitSign(perf).png" id="2_a73cg"]
+[ext_resource type="FontFile" uid="uid://qvy8xa6onhnu" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_kx8gf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a73cg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqntl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kx8gf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04mgk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64wff"]
+
+[node name="MenuButton" type="MenuButton" unique_id=1115680318]
+offset_right = 64.0
+offset_bottom = 54.0
+script = ExtResource("1_a73cg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=208572842]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 55.0
+offset_bottom = 50.0
+texture = ExtResource("2_a73cg")
+
+[node name="Label" type="Label" parent="." unique_id=20896909]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 14.0
+offset_right = 89.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_kx8gf")
+theme_override_font_sizes/font_size = 8
+text = "back"
+
+[node name="Button" type="Button" parent="." unique_id=1344353009]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 45.0
+offset_bottom = 44.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a73cg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sqntl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kx8gf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_04mgk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_64wff")
+
+[connection signal="pressed" from="Button" to="." method="_on_exitSign_pressed"]

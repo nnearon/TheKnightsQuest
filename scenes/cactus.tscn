@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://uuttmuir6bns"]
+
+[ext_resource type="Script" uid="uid://bed75oe2xebm2" path="res://scripts/slime.gd" id="1_iiia4"]
+[ext_resource type="Texture2D" uid="uid://cm6kbaq5on5ud" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_F_1.png" id="2_pueb3"]
+[ext_resource type="Texture2D" uid="uid://c62lxvnmx6nwf" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_F_2.png" id="3_4wtxa"]
+[ext_resource type="PackedScene" uid="uid://bm38w1xok6i5s" path="res://scenes/killzone.tscn" id="3_t8fcr"]
+[ext_resource type="Texture2D" uid="uid://cl8f47ah7pccd" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_F_3.png" id="4_gb6jn"]
+[ext_resource type="Texture2D" uid="uid://cg2tm5wwueksk" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_F_4.png" id="5_wn0y5"]
+[ext_resource type="Texture2D" uid="uid://dn0dimvmgk4j6" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_L_1.png" id="6_2qwbl"]
+[ext_resource type="Texture2D" uid="uid://dglngcmrpw8rq" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_L_2.png" id="7_rohtb"]
+[ext_resource type="Texture2D" uid="uid://dpsjefpg1t8xw" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_L_3.png" id="8_vy1bd"]
+[ext_resource type="Texture2D" uid="uid://c1k05nfjkp85r" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_L_4.png" id="9_wrslr"]
+[ext_resource type="Texture2D" uid="uid://buq5oir32d5qs" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_R_1.png" id="10_vtmom"]
+[ext_resource type="Texture2D" uid="uid://d31t51laylwwg" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_R_2.png" id="11_tshq7"]
+[ext_resource type="Texture2D" uid="uid://sm4k5bma1en8" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_R_3.png" id="12_61cal"]
+[ext_resource type="Texture2D" uid="uid://c2fs8xmd2btyf" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Cactus/Cactus_1/Attack_1/Attack_1_R_4.png" id="13_h84yj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5wyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pueb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4wtxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gb6jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wn0y5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2qwbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rohtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vy1bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wrslr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vtmom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tshq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_61cal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h84yj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
+size = Vector2(10, 11)
+
+[node name="cactus" type="Node2D" unique_id=1035008956]
+script = ExtResource("1_iiia4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=286531233]
+sprite_frames = SubResource("SpriteFrames_v5wyi")
+autoplay = "default"
+frame = 11
+frame_progress = 0.008688118
+flip_h = true
+
+[node name="killzone" parent="." unique_id=2058286764 instance=ExtResource("3_t8fcr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1400356569]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_0l8pv")
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=898858226]
+position = Vector2(0, 5)
+target_position = Vector2(10, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=449336089]
+position = Vector2(0, 5)
+target_position = Vector2(-10, 0)

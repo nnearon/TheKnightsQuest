@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b18jaxkmwlrk6"]
+
+[ext_resource type="Texture2D" uid="uid://bf5b6l5yj2x2w" path="res://assets/sprites/OneCOin.png" id="1_p7tkd"]
+[ext_resource type="Script" uid="uid://cnlb1hpx1f6r" path="res://scripts/coin_counter.gd" id="1_payrn"]
+[ext_resource type="FontFile" uid="uid://qvy8xa6onhnu" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_payrn"]
+
+[node name="CoinCounter" type="CanvasLayer" unique_id=1050811386]
+script = ExtResource("1_payrn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1998587742]
+offset_left = 29.0
+offset_top = 22.0
+offset_right = 369.0
+offset_bottom = 90.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=75110158]
+layout_mode = 2
+texture = ExtResource("1_p7tkd")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1233495502]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_payrn")
+theme_override_font_sizes/font_size = 24
+text = "0 / 10"

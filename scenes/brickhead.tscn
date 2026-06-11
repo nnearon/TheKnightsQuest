@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://xqnv7b3woo17"]
+
+[ext_resource type="Script" uid="uid://bed75oe2xebm2" path="res://scripts/slime.gd" id="1_ovels"]
+[ext_resource type="Texture2D" uid="uid://c3mhiri6gogif" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_1.png" id="2_jf37y"]
+[ext_resource type="Texture2D" uid="uid://ctqsy3su3spqa" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_2.png" id="3_0q854"]
+[ext_resource type="PackedScene" uid="uid://bm38w1xok6i5s" path="res://scenes/killzone.tscn" id="3_rk15f"]
+[ext_resource type="Texture2D" uid="uid://flld2gvgcvnq" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_3.png" id="4_gtr68"]
+[ext_resource type="Texture2D" uid="uid://c1dsqwpuqhv1b" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_4.png" id="5_tnylw"]
+[ext_resource type="Texture2D" uid="uid://cvfo6fya5hu5a" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_5.png" id="6_8cbeo"]
+[ext_resource type="Texture2D" uid="uid://emoj25u4nkg8" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_6.png" id="7_hqmlu"]
+[ext_resource type="Texture2D" uid="uid://1ohcbjvvqr2u" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_7.png" id="8_ow3p3"]
+[ext_resource type="Texture2D" uid="uid://d3mdwp56ckt21" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_8.png" id="9_cgjrf"]
+[ext_resource type="Texture2D" uid="uid://dy0tvp3nagoii" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_9.png" id="10_xlmd8"]
+[ext_resource type="Texture2D" uid="uid://cg1nc3i4m17ue" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_10.png" id="11_na6ns"]
+[ext_resource type="Texture2D" uid="uid://bmt6ufjbkmgk7" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_11.png" id="12_5gcvx"]
+[ext_resource type="Texture2D" uid="uid://btkn1sckh7jqv" path="res://assets/Four_Seasons_Platformer_Sprites/Sprites [Enemies]/Brickhead/Brickhead_1/Attack/Attack_12.png" id="13_83q0n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5wyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jf37y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0q854")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gtr68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tnylw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8cbeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hqmlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ow3p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cgjrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xlmd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_na6ns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5gcvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_83q0n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
+size = Vector2(12, 16)
+
+[node name="brickhead" type="Node2D" unique_id=1035008956]
+script = ExtResource("1_ovels")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=286531233]
+position = Vector2(0, 4)
+scale = Vector2(0.39583334, 0.39583334)
+sprite_frames = SubResource("SpriteFrames_v5wyi")
+autoplay = "default"
+frame = 2
+frame_progress = 0.040416088
+flip_h = true
+
+[node name="killzone" parent="." unique_id=2058286764 instance=ExtResource("3_rk15f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1400356569]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_0l8pv")
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=898858226]
+position = Vector2(0, 5)
+target_position = Vector2(12, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=449336089]
+position = Vector2(0, 5)
+target_position = Vector2(-12, 0)

@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://csmc022ss7oqy"]
+
+[ext_resource type="FontFile" uid="uid://qvy8xa6onhnu" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_0ykhv"]
+[ext_resource type="Script" uid="uid://b3vf4wgc7pccd" path="res://scripts/main_menu.gd" id="1_ow34m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ow34m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
+bg_color = Color(0.9843137, 0.76862746, 0.105882354, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.9490196, 0.45490196, 0.105882354, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 16
+shadow_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+shadow_size = 3
+shadow_offset = Vector2(0, 3.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ykhv"]
+bg_color = Color(0.7336003, 0.5680124, 0.023779672, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.5583185, 0.24950293, 0.013786861, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 16
+shadow_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+shadow_size = 3
+shadow_offset = Vector2(0, 3.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wh52"]
+bg_color = Color(0.9968516, 0.8092878, 0.32246846, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.9903762, 0.55684495, 0.30582967, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 16
+shadow_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+shadow_size = 3
+shadow_offset = Vector2(0, 3.4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ow34m"]
+
+[node name="MainMenu" type="Control" unique_id=1462353903]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ow34m")
+
+[node name="Panel" type="Panel" parent="." unique_id=448547796]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ow34m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=853852614]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = 85.0
+offset_right = 107.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="startButton" type="Button" parent="VBoxContainer" unique_id=294614786]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0ykhv")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0ykhv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2wh52")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ow34m")
+text = "start game"
+
+[node name="exitButton" type="Button" parent="VBoxContainer" unique_id=682449328]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0ykhv")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0ykhv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2wh52")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ow34m")
+text = "exit"
+
+[node name="Label" type="Label" parent="." unique_id=2002259242]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -413.0
+offset_top = -99.0
+offset_right = 419.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.00014651388, 7.0724265e-05, 1)
+theme_override_fonts/font = ExtResource("1_0ykhv")
+theme_override_font_sizes/font_size = 64
+text = "KNIGHT'S QUEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/exitButton" to="." method="_on_exit_button_pressed"]
