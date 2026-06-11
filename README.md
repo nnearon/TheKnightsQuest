@@ -1,7 +1,7 @@
 # 🎮 The Knight's Quest
 
 ## 📌 Overview
-**Game Title** is a 2D/3D game developed using the Godot Engine.  
+**Game Title** is a 2D game developed using the Godot Engine.  
 The project was created as part of a coursework/assignment and focuses on gameplay mechanics, level design, and interactive systems.
 
 ---
